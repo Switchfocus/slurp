@@ -16,42 +16,39 @@ body {
 }
 
 /* ── Custom Cursor ── */
-/*
-   Positioned via transform (no left/top animation — avoids compositing
-   conflicts that break mix-blend-mode in Safari).
-   Uses --ink so it adapts to light/dark theme automatically.
-*/
 .cursor {
   position: fixed;
   top: 0; left: 0;
-  width: 12px; height: 12px;
+  width: 14px; height: 14px;
   border-radius: 50%;
   background: var(--ink);
   border: 1.5px solid transparent;
   pointer-events: none;
   z-index: 9999;
-  /* start far offscreen until first mousemove */
-  transform: translate(-200px, -200px) translate(-50%, -50%);
+  opacity: 0; /* hidden until first mousemove */
   transition:
-    width  0.25s ease,
-    height 0.25s ease,
+    width        0.25s ease,
+    height       0.25s ease,
     background   0.25s ease,
-    border-color 0.25s ease;
+    border-color 0.25s ease,
+    opacity      0.3s  ease;
 }
 
+.cursor.visible { opacity: 1; }
+
 .cursor.hover {
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
   background: transparent;
   border-color: var(--ink);
 }
 
+/* Hide native cursor on fine-pointer devices */
+body { cursor: none; }
+
 @media (pointer: coarse) {
   .cursor { display: none; }
-}
-
-@media (pointer: fine) {
-  *, *::before, *::after { cursor: none !important; }
+  body, *, *::before, *::after { cursor: auto !important; }
 }
 
 /* ─────────────────────────────────────────────

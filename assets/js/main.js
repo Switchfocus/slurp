@@ -18,9 +18,12 @@
   /* ── Custom cursor ── */
   const cursor = document.getElementById('cursor');
   if (cursor && window.matchMedia('(pointer: fine)').matches) {
+    /* GSAP manages the transform — keeps it out of conflict with inline styles */
+    gsap.set(cursor, { xPercent: -50, yPercent: -50 });
+
     document.addEventListener('mousemove', (e) => {
-      cursor.style.transform =
-        `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`;
+      gsap.set(cursor, { x: e.clientX, y: e.clientY });
+      cursor.classList.add('visible');
     });
 
     document.querySelectorAll('a, button').forEach((el) => {
