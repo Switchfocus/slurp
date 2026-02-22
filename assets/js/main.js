@@ -19,8 +19,8 @@
   const cursor = document.getElementById('cursor');
   if (cursor && window.matchMedia('(pointer: fine)').matches) {
     document.addEventListener('mousemove', (e) => {
-      cursor.style.left = e.clientX + 'px';
-      cursor.style.top  = e.clientY + 'px';
+      cursor.style.transform =
+        `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`;
     });
 
     document.querySelectorAll('a, button').forEach((el) => {

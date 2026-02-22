@@ -17,27 +17,33 @@ body {
 
 /* ── Custom Cursor ── */
 /*
-   mix-blend-mode: difference + white fill = always visible.
-   Appears dark on light backgrounds, light on dark — works
-   in both themes without any JS theme-awareness.
+   Positioned via transform (no left/top animation — avoids compositing
+   conflicts that break mix-blend-mode in Safari).
+   Uses --ink so it adapts to light/dark theme automatically.
 */
 .cursor {
   position: fixed;
-  top: -30px; left: -30px; /* start offscreen until first mousemove */
-  width: 16px; height: 16px;
+  top: 0; left: 0;
+  width: 12px; height: 12px;
   border-radius: 50%;
-  background: white;
-  mix-blend-mode: difference;
+  background: var(--ink);
+  border: 1.5px solid transparent;
   pointer-events: none;
   z-index: 9999;
-  transform: translate(-50%, -50%);
-  transition: width 0.22s ease, height 0.22s ease;
-  will-change: left, top;
+  /* start far offscreen until first mousemove */
+  transform: translate(-200px, -200px) translate(-50%, -50%);
+  transition:
+    width  0.25s ease,
+    height 0.25s ease,
+    background   0.25s ease,
+    border-color 0.25s ease;
 }
 
 .cursor.hover {
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
+  background: transparent;
+  border-color: var(--ink);
 }
 
 @media (pointer: coarse) {
