@@ -1,0 +1,158 @@
+{
+  "categories": [
+    {
+      "id": "noodles",
+      "name": "Noodles",
+      "broth_options": ["Pork Bone", "Beef Tendon", "Sichuan Spicy", "Vegetable"],
+      "items": [
+        {
+          "id": "noodle-01",
+          "name": "Dan Dan Noodles",
+          "description": "Hand-pulled noodles, Sichuan spiced pork, sesame paste, preserved vegetables, crispy shallots.",
+          "price": "€15",
+          "tags": ["spicy"]
+        },
+        {
+          "id": "noodle-02",
+          "name": "Beef Brisket Noodle",
+          "description": "Slow-braised brisket, star anise broth, hand-cut noodles, bok choy, chilli oil.",
+          "price": "€17"
+        },
+        {
+          "id": "noodle-03",
+          "name": "Prawn Wonton Noodle",
+          "description": "Thin egg noodles, prawn & pork wontons, light soy broth, spring onion.",
+          "price": "€16"
+        },
+        {
+          "id": "noodle-04",
+          "name": "Mushroom & Tofu Noodle",
+          "description": "Wild mushrooms, silken tofu, hand-pulled noodles in a clear vegetable dashi.",
+          "price": "€14",
+          "tags": ["veg"]
+        },
+        {
+          "id": "noodle-05",
+          "name": "Lamb Spice Road",
+          "description": "Cumin-spiced lamb shoulder, hand-torn noodles, Xinjiang-style broth, coriander.",
+          "price": "€18",
+          "tags": ["new"]
+        }
+      ]
+    },
+    {
+      "id": "wontons",
+      "name": "Wontons",
+      "items": [
+        {
+          "id": "wonton-01",
+          "name": "Classic Prawn Wonton",
+          "description": "Six pieces. Whole tiger prawn, ginger, soy-sesame dipping sauce.",
+          "price": "€12"
+        },
+        {
+          "id": "wonton-02",
+          "name": "Pork & Water Chestnut",
+          "description": "Six pieces. Minced pork, water chestnut, chinkiang vinegar dip.",
+          "price": "€11"
+        },
+        {
+          "id": "wonton-03",
+          "name": "Chilli Oil Wonton",
+          "description": "Eight pieces in Sichuan red oil, toasted sesame, spring onion.",
+          "price": "€13",
+          "tags": ["spicy"]
+        },
+        {
+          "id": "wonton-04",
+          "name": "Mushroom & Black Truffle",
+          "description": "Four pieces. Wild mushroom, black truffle, light chicken consommé.",
+          "price": "€16",
+          "tags": ["new"]
+        }
+      ]
+    },
+    {
+      "id": "sides",
+      "name": "Sides",
+      "items": [
+        {
+          "id": "side-01",
+          "name": "Smashed Cucumber",
+          "description": "Chinkiang vinegar, toasted sesame, garlic, dried chilli.",
+          "price": "€7",
+          "tags": ["veg"]
+        },
+        {
+          "id": "side-02",
+          "name": "Wok-charred Greens",
+          "description": "Gai lan or bok choy, oyster sauce, ginger.",
+          "price": "€8",
+          "tags": ["veg"]
+        },
+        {
+          "id": "side-03",
+          "name": "Crispy Tofu Bites",
+          "description": "Silken tofu, deep-fried, served with scallion oil and soy.",
+          "price": "€9",
+          "tags": ["veg"]
+        },
+        {
+          "id": "side-04",
+          "name": "Char Siu Pork Bao",
+          "description": "Two soft steamed buns, slow-roasted pork, hoisin, pickled daikon.",
+          "price": "€10"
+        },
+        {
+          "id": "side-05",
+          "name": "Steamed Jasmine Rice",
+          "description": "Fragrant long-grain, served plain.",
+          "price": "€4",
+          "tags": ["veg"]
+        }
+      ]
+    },
+    {
+      "id": "drinks",
+      "name": "Drinks",
+      "items": [
+        {
+          "id": "drink-01",
+          "name": "Jasmine Iced Tea",
+          "description": "Brewed jasmine, light honey, lemon.",
+          "price": "€5"
+        },
+        {
+          "id": "drink-02",
+          "name": "Yuzu Lemonade",
+          "description": "Fresh yuzu, sparkling water, cane sugar.",
+          "price": "€6"
+        },
+        {
+          "id": "drink-03",
+          "name": "Tsingtao Beer",
+          "description": "330ml bottle.",
+          "price": "€5"
+        },
+        {
+          "id": "drink-04",
+          "name": "Sichuan Spiced Negroni",
+          "description": "Gin, Campari, red vermouth, Sichuan pepper tincture.",
+          "price": "€13"
+        },
+        {
+          "id": "drink-05",
+          "name": "Sparkling Water",
+          "description": "500ml bottle.",
+          "price": "€3"
+        },
+        {
+          "id": "drink-06",
+          "name": "House Red Wine",
+          "description": "Glass of seasonal selection.",
+          "price": "€9"
+        }
+      ]
+    }
+  ]
+}

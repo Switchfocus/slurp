@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Slurp menu — Noodles, wontons, sides &amp; drinks. Luxembourg City.">
+  <title>Menu — Slurp</title>
+
+  <!-- Theme toggle — must run before any render to prevent flash -->
+  <script src="assets/js/theme.js"></script>
+
+  <!-- Fonts: Cormorant Garamond (display) + DM Sans (body/labels) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300;1,600&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/menu.css">
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════
+       MENU HEADER
+       Standalone — QR code scan target
+  ══════════════════════════════════════════ -->
+  <header class="menu-header">
+    <button class="theme-toggle" aria-label="Switch to dark mode"></button>
+    <p class="menu-header-wordmark">Slurp</p>
+    <p class="menu-header-subtitle">Noodles &amp; Wontons &middot; Luxembourg</p>
+  </header>
+
+
+  <!-- ═══════════════════════════════════════
+       STICKY CATEGORY TABS
+       Populated by menu.js from menu.json
+  ══════════════════════════════════════════ -->
+  <nav class="menu-tabs" aria-label="Menu categories" role="tablist">
+    <!-- Tabs injected by menu.js -->
+  </nav>
+
+
+  <!-- ═══════════════════════════════════════
+       MENU CONTENT
+       Categories + item rows injected by menu.js
+  ══════════════════════════════════════════ -->
+  <main class="menu-content" id="menu-content" aria-label="Menu items">
+    <!-- Content injected by menu.js from assets/data/menu.json -->
+
+    <!-- Fallback for no-JS -->
+    <noscript>
+      <p style="color:var(--ink-dim);text-align:center;padding:4rem 0;font-family:sans-serif;">
+        Please enable JavaScript to view the menu.
+      </p>
+    </noscript>
+  </main>
+
+
+  <!-- ═══════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════ -->
+  <footer class="menu-footer">
+    <a href="index.html" class="menu-footer-back">&larr; Back to Slurp</a>
+    <p class="menu-footer-copy">&copy; Slurp 2026 &middot; Luxembourg</p>
+  </footer>
+
+
+  <!-- ═══════════════════════════════════════
+       SCRIPTS
+  ══════════════════════════════════════════ -->
+  <script src="assets/js/menu.js"></script>
+
+</body>
+</html>

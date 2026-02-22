@@ -1,0 +1,107 @@
+/* =============================================
+   SLURP — Design Tokens
+   ============================================= */
+
+/* ── Light theme (default) ── */
+:root {
+  --bg:          #FAFAF8;
+  --surface:     #F3F1ED;
+  --border:      #E8E3DB;
+  --ink:         #1A1612;
+  --ink-dim:     #9A8E80;
+  --accent:      #C24A28;
+  --accent-dim:  #9B3518;
+
+  /* RGBA helpers — replaced individually per theme */
+  --nav-bg-scrolled:  rgba(250, 250, 248, 0.92);
+  --scroll-line-bg:   rgba(26, 22, 18, 0.15);
+  --caption-color:    rgba(250, 250, 248, 0.72);
+  --map-filter:       grayscale(100%) contrast(0.8) brightness(1.1);
+
+  /* ── Typography ── */
+  --font-serif:  'Cormorant Garamond', Georgia, serif;
+  --font-sans:   'DM Sans', system-ui, sans-serif;
+  --font-body:   'DM Sans', system-ui, sans-serif;
+
+  /* Scale */
+  --fs-display:  clamp(3.5rem, 8vw, 8rem);
+  --fs-heading:  clamp(2.5rem, 5vw, 5rem);
+  --fs-subhead:  clamp(1.5rem, 2.5vw, 2.2rem);
+  --fs-label:    0.72rem;
+  --fs-body:     1rem;
+  --fs-item:     1.3rem;
+  --fs-price:    0.85rem;
+
+  /* ── Spacing ── */
+  --space-xs:   clamp(0.5rem,  1vw,   0.75rem);
+  --space-s:    clamp(1rem,    2vw,   1.5rem);
+  --space-m:    clamp(2rem,    4vw,   3rem);
+  --space-l:    clamp(3rem,    6vw,   6rem);
+  --space-xl:   clamp(5rem,    10vw,  10rem);
+
+  /* ── Motion ── */
+  --ease-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast:    0.3s;
+  --dur-med:     0.6s;
+  --dur-slow:    1s;
+
+  /* ── Layout ── */
+  --nav-height:  64px;
+}
+
+/* ── Dark theme ── */
+[data-theme="dark"] {
+  --bg:          #0C0906;
+  --surface:     #141009;
+  --border:      #2A2218;
+  --ink:         #F0E8D8;   /* cream as primary text */
+  --ink-dim:     #8A7E6E;
+  --accent:      #D4380D;   /* vermillion — pops on dark */
+  --accent-dim:  #A02A08;
+
+  --nav-bg-scrolled:  rgba(12, 9, 6, 0.88);
+  --scroll-line-bg:   rgba(240, 232, 216, 0.15);
+  --caption-color:    rgba(240, 232, 216, 0.65);
+  --map-filter:       grayscale(100%) sepia(15%) brightness(0.45) contrast(1.25);
+}
+
+/* ── Shared: Theme Toggle ── */
+.theme-toggle {
+  width: 36px;
+  height: 20px;
+  border-radius: 10px;
+  background: transparent;
+  border: 1px solid var(--border);
+  position: relative;
+  flex-shrink: 0;
+  transition: border-color var(--dur-fast) ease;
+}
+
+.theme-toggle::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--ink);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+[data-theme="dark"] .theme-toggle::after {
+  transform: translateX(16px);
+}
+
+/* ── Shared: Theme transition (smooth swap, no FOUC) ── */
+html.theme-transitioning,
+html.theme-transitioning *,
+html.theme-transitioning *::before,
+html.theme-transitioning *::after {
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease,
+    border-color 0.35s ease,
+    filter 0.35s ease !important;
+}

@@ -1,0 +1,349 @@
+/* =============================================
+   SLURP — Menu Page Styles (Light Theme)
+   ============================================= */
+
+html {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-weight: 300;
+}
+
+body {
+  overflow-x: hidden;
+  background: var(--bg);
+}
+
+/* ── Menu Header ── */
+.menu-header {
+  padding: var(--space-l) var(--space-m) var(--space-m);
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+
+.menu-header .theme-toggle {
+  position: absolute;
+  top: var(--space-m);
+  right: var(--space-m);
+}
+
+.menu-header-wordmark {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 600;
+  font-size: 2.5rem;
+  letter-spacing: 0;
+  color: var(--ink);
+  line-height: 1;
+  margin-bottom: var(--space-xs);
+}
+
+.menu-header-subtitle {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-size: var(--fs-label);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+}
+
+/* ── Sticky Tab Bar ── */
+.menu-tabs {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  padding: 0 var(--space-m);
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.menu-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.menu-tab {
+  flex-shrink: 0;
+  padding: var(--space-s) var(--space-m);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: var(--fs-label);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: color var(--dur-fast) ease, border-color var(--dur-fast) ease;
+  background: none;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  position: relative;
+  top: 1px; /* overlap parent border */
+}
+
+.menu-tab:hover {
+  color: var(--ink);
+}
+
+.menu-tab.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* ── Menu Content ── */
+.menu-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--space-l) var(--space-m) var(--space-xl);
+}
+
+/* ── Category Section ── */
+.menu-category {
+  margin-bottom: var(--space-xl);
+  scroll-margin-top: 80px;
+}
+
+.menu-category-title {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 300;
+  font-size: var(--fs-subhead);
+  color: var(--ink);
+  letter-spacing: 0.01em;
+  margin-bottom: var(--space-m);
+  padding-bottom: var(--space-s);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-s);
+}
+
+.menu-category-title::after {
+  content: attr(data-count);
+  font-family: var(--font-sans);
+  font-style: normal;
+  font-weight: 300;
+  font-size: var(--fs-label);
+  letter-spacing: 0.1em;
+  color: var(--ink-dim);
+}
+
+/* ── Broth options (noodles) ── */
+.broth-note {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: var(--fs-label);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: var(--space-m);
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.broth-note::before {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 1px;
+  background: var(--accent);
+}
+
+.broth-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-m);
+}
+
+.broth-btn {
+  padding: 6px 16px;
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-size: var(--fs-label);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+  border: 1px solid var(--border);
+  border-radius: 1px;
+  cursor: pointer;
+  transition: color var(--dur-fast) ease,
+              border-color var(--dur-fast) ease,
+              background var(--dur-fast) ease;
+  background: transparent;
+}
+
+.broth-btn:hover,
+.broth-btn.active {
+  color: var(--ink);
+  border-color: var(--accent);
+}
+
+/* ── Item Row ── */
+.menu-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto;
+  gap: 4px var(--space-s);
+  padding: var(--space-s) 0;
+  border-bottom: 1px solid var(--border);
+  align-items: start;
+  position: relative;
+  transition: background 0.2s ease;
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+.menu-item:hover {
+  background: var(--surface);
+}
+
+.menu-item-name {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 300;
+  font-size: var(--fs-item);
+  color: var(--ink);
+  line-height: 1.2;
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.menu-item-desc {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-size: 0.875rem;
+  color: var(--ink-dim);
+  line-height: 1.6;
+  grid-column: 1;
+  grid-row: 2;
+  max-width: 55ch;
+}
+
+.menu-item-price {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: var(--fs-price);
+  color: var(--accent);
+  letter-spacing: 0.05em;
+  grid-column: 2;
+  grid-row: 1;
+  align-self: center;
+  white-space: nowrap;
+}
+
+/* Future order button scaffold — hidden now */
+.menu-item-add {
+  display: none;
+  grid-column: 2;
+  grid-row: 2;
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: var(--accent);
+  transition: border-color var(--dur-fast) ease, background var(--dur-fast) ease;
+  cursor: pointer;
+}
+
+.menu-item-add:hover {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--bg);
+}
+
+/* Tags */
+.menu-item-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 6px;
+  grid-column: 1 / -1;
+}
+
+.tag {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+  border: 1px solid var(--border);
+  padding: 2px 8px;
+  border-radius: 1px;
+}
+
+.tag.spicy { border-color: #B83232; color: #B83232; }
+.tag.veg   { border-color: #3D7A3D; color: #3D7A3D; }
+.tag.new   { border-color: var(--accent); color: var(--accent); }
+
+/* ── Footer ── */
+.menu-footer {
+  border-top: 1px solid var(--border);
+  padding: var(--space-m);
+  text-align: center;
+}
+
+.menu-footer-back {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-size: var(--fs-label);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+  text-decoration: none;
+  transition: color var(--dur-fast) ease;
+}
+
+.menu-footer-back:hover {
+  color: var(--ink);
+}
+
+.menu-footer-copy {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-size: var(--fs-label);
+  color: var(--ink-dim);
+  margin-top: var(--space-s);
+  letter-spacing: 0.1em;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .menu-tabs {
+    padding: 0 var(--space-s);
+  }
+
+  .menu-tab {
+    padding: var(--space-s) var(--space-s);
+  }
+
+  .menu-content {
+    padding: var(--space-m) var(--space-s) var(--space-xl);
+  }
+
+  .menu-item {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-item-price {
+    grid-column: 1;
+    grid-row: 3;
+    margin-top: 4px;
+  }
+}
