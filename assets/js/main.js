@@ -17,18 +17,21 @@
 
   /* ── Custom cursor ── */
   const cursor = document.getElementById('cursor');
-  if (cursor && window.matchMedia('(pointer: fine)').matches) {
-    /* GSAP manages the transform — keeps it out of conflict with inline styles */
+  if (cursor) {
     gsap.set(cursor, { xPercent: -50, yPercent: -50 });
-
+  
     document.addEventListener('mousemove', (e) => {
       gsap.set(cursor, { x: e.clientX, y: e.clientY });
       cursor.classList.add('visible');
     });
-
-    document.querySelectorAll('a, button').forEach((el) => {
-      el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
-      el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+  
+    document.addEventListener('mouseleave', () => cursor.classList.remove('visible'));
+  
+    document.addEventListener('mouseover', (e) => {
+      if (e.target.closest('a, button')) cursor.classList.add('hover');
+    });
+    document.addEventListener('mouseout', (e) => {
+      if (e.target.closest('a, button')) cursor.classList.remove('hover');
     });
   }
 
